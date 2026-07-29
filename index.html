@@ -2,12 +2,19 @@
 <html lang="pt-BR">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id=GTM-NXM9KZRV'+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NXM9KZRV');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NXM9KZRV');
+  </script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sette Lavoro | Recrutamento e Seleção para Empresas</title>
@@ -22,23 +29,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/logo-sette-lavoro.png">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Tag Manager: substitua GTM-XXXXXXX pelo seu ID quando configurar -->
-  <!--
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');
-  </script>
-  -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXM9KZRV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXM9KZRV"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
   <header class="header">
@@ -264,7 +263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </label>
 
           <label class="consent">
-            <input type="checkbox" required>
+            <input type="checkbox" name="consentimento" value="sim" required>
             <span>Concordo com o uso dos dados para contato comercial, conforme a <a href="politica-privacidade.html">Política de Privacidade</a>.</span>
           </label>
 

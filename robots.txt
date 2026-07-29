@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lucc4degaspari.github.io/sette-lavoro/sitemap.xml

@@ -1,0 +1,29 @@
+SETTE LAVORO — PACOTE CORRIGIDO
+
+O que foi corrigido:
+- Apenas uma instalação ativa do Google Tag Manager.
+- ID correto: GTM-NXM9KZRV.
+- Remoção do bloco antigo e duplicado de rastreamento.
+- GTM instalado também em obrigado.html e politica-privacidade.html.
+- Formulário mantido com envio para contato@settelavoro.com.br.
+- Página obrigado.html pronta para ser usada como conversão.
+- Arquivos robots.txt e sitemap.xml adicionados.
+- Todos os arquivos salvos em UTF-8.
+
+COMO PUBLICAR:
+1. Extraia este ZIP.
+2. Copie todo o conteúdo da pasta extraída.
+3. Cole na pasta local do repositório sette-lavoro.
+4. Escolha substituir os arquivos existentes.
+5. No GitHub Desktop, escreva:
+   Correção definitiva do site e rastreamento
+6. Clique em Commit to main.
+7. Clique em Push origin.
+8. Aguarde o GitHub Pages atualizar.
+
+IMPORTANTE:
+- Não adicione o código direto G-K0XFWX5TV1 no HTML.
+- O Google Analytics continuará sendo carregado pelo GTM.
+- No GTM, mantenha a Tag do Google G-K0XFWX5TV1 publicada em All Pages.
+- Para medir leads, configure depois uma conversão baseada em:
+  page_location contém /obrigado.html
