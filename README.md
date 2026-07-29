@@ -12,13 +12,8 @@ Arquivos prontos para publicação no GitHub Pages.
 O formulário usa FormSubmit e envia para:
 contato@settelavoro.com.br
 
-Na primeira submissão, o FormSubmit pode enviar um e-mail de confirmação. É necessário confirmar uma única vez.
+Na primeira submissão, o FormSubmit enviará um e-mail de confirmação. É necessário confirmar uma única vez.
 
 ## Mensuração
-O Google Tag Manager já está instalado e ativo com o container:
-GTM-NXM9KZRV
-
-O Google Analytics 4 deve continuar sendo carregado pelo GTM usando a tag:
-G-K0XFWX5TV1
-
-Não adicione um segundo código direto do Analytics no HTML, pois isso pode duplicar as visualizações.
+O código do Google Tag Manager está comentado no `<head>` do index.html.
+Depois de criar o GTM, substitua `GTM-XXXXXXX` e remova os comentários.
