@@ -1,0 +1,25 @@
+VALIDAÇÃO DO WHATSAPP — SETTE LAVORO
+
+O campo agora:
+- formata automaticamente como (DD) 99999-9999;
+- aceita colagem com +55;
+- exige exatamente 11 números;
+- bloqueia DDD inexistente;
+- exige o 9 inicial do celular;
+- mostra erro antes de enviar;
+- salva também o número normalizado no formato +55DDXXXXXXXXX.
+
+PUBLICAÇÃO:
+1. Extraia este ZIP.
+2. Copie todos os arquivos para a pasta local do repositório sette-lavoro.
+3. Substitua os arquivos existentes.
+4. No GitHub Desktop:
+   Resumo: Validação do WhatsApp no formulário
+5. Commit to main.
+6. Push origin.
+7. Aguarde a publicação e teste com Ctrl + F5.
+
+OBSERVAÇÃO:
+A validação impede formatos e números estruturalmente inválidos.
+Para comprovar que o número realmente pertence ao visitante, seria necessário
+enviar um código por WhatsApp ou SMS usando uma API externa.

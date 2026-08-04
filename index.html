@@ -230,7 +230,24 @@
           <input type="hidden" name="_cc" value="contato@settelavoro.com.br">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://lucc4degaspari.github.io/sette-lavoro/obrigado.html">
-<label>
+          <div class="business-gate">
+            <label>
+              Este contato é para:
+              <select id="tipo-contato" name="tipo_contato" required>
+                <option value="">Selecione uma opção</option>
+                <option value="empresa">Represento uma empresa e preciso contratar</option>
+                <option value="candidato">Estou procurando emprego</option>
+              </select>
+            </label>
+
+            <div id="aviso-candidato" class="candidate-warning" hidden aria-live="polite">
+              <strong>Este formulário não recebe currículos.</strong>
+              <span>Ele é exclusivo para empresas que desejam contratar. Para procurar vagas, acompanhe os canais oficiais da Sette Lavoro.</span>
+            </div>
+          </div>
+
+          <div id="campos-empresa">
+          <label>
             Seu nome
             <input type="text" name="nome" autocomplete="name" required>
           </label>
@@ -240,10 +257,35 @@
             <input type="text" name="empresa" autocomplete="organization" required>
           </label>
 
+          <label>
+            Seu cargo ou função na empresa
+            <select name="cargo_empresa" required>
+              <option value="">Selecione</option>
+              <option value="Proprietário(a) ou sócio(a)">Proprietário(a) ou sócio(a)</option>
+              <option value="RH ou Departamento Pessoal">RH ou Departamento Pessoal</option>
+              <option value="Gestor(a) ou líder">Gestor(a) ou líder</option>
+              <option value="Administrativo">Administrativo</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </label>
+
           <div class="form-row">
             <label>
               WhatsApp
-              <input type="tel" name="telefone" autocomplete="tel" placeholder="(16) 99999-9999" required>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="(16) 99999-9999"
+                maxlength="15"
+                pattern="\([0-9]{2}\) 9[0-9]{4}-[0-9]{4}"
+                aria-describedby="telefone-ajuda telefone-erro"
+                required>
+              <small id="telefone-ajuda" class="field-help">Digite o DDD e os 9 números do WhatsApp.</small>
+              <span id="telefone-erro" class="field-error" aria-live="polite"></span>
+              <input type="hidden" id="telefone-normalizado" name="telefone_normalizado">
             </label>
             <label>
               Cidade
@@ -261,13 +303,19 @@
             <textarea name="mensagem" rows="4" placeholder="Prazo, quantidade de vagas, experiência exigida..."></textarea>
           </label>
 
+          <label class="consent company-confirmation">
+            <input type="checkbox" id="confirmacao-empresa" name="confirmacao_empresa" value="sim" required>
+            <span>Confirmo que represento uma empresa e estou solicitando apoio para contratação. Este contato não é uma candidatura a emprego.</span>
+          </label>
+
           <label class="consent">
             <input type="checkbox" name="consentimento" value="sim" required>
-            <span>Concordo com o uso dos dados para contato comercial, conforme a <a href="https://settelavoro.com.br/politica-de-privacidade">Política de Privacidade</a>.</span>
+            <span>Concordo com o uso dos dados para contato comercial, conforme a <a href="politica-privacidade.html">Política de Privacidade</a>.</span>
           </label>
 
           <button class="btn btn-full" type="submit">Quero receber uma proposta</button>
           <small>Seus dados serão usados apenas para atendimento da solicitação.</small>
+          </div><!-- /campos-empresa -->
         </form>
       </div>
     </section>
@@ -309,7 +357,7 @@
       </div>
 
       <div class="footer-links">
-        <a href="https://settelavoro.com.br/politica-de-privacidade">Política de Privacidade</a>
+        <a href="politica-privacidade.html">Política de Privacidade</a>
         <a href="mailto:contato@settelavoro.com.br">Contato</a>
       </div>
 
@@ -319,6 +367,6 @@
 
   <a class="floating-cta" href="#formulario">Solicitar proposta</a>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260804-3"></script>
 </body>
 </html>

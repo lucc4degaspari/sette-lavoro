@@ -1,0 +1,27 @@
+FILTRO DE CANDIDATOS E VALIDAÇÃO DE WHATSAPP
+
+O formulário agora:
+- pergunta obrigatoriamente se a pessoa representa uma empresa;
+- bloqueia quem selecionar “Estou procurando emprego”;
+- esconde os campos empresariais para candidatos;
+- exige cargo/função dentro da empresa;
+- exige confirmação explícita de que não é candidatura;
+- mantém a validação do WhatsApp;
+- usa versão no script.js para evitar cache antigo do navegador.
+
+PUBLICAÇÃO:
+1. Extraia este ZIP.
+2. Copie todo o conteúdo para a pasta local do repositório sette-lavoro.
+3. Substitua os arquivos existentes.
+4. GitHub Desktop:
+   Resumo: Filtro de empresas e validação reforçada
+5. Commit to main.
+6. Push origin.
+7. Aguarde a publicação.
+8. Abra o site com Ctrl + F5 e teste as duas opções do primeiro campo.
+
+LIMITAÇÃO:
+Como o site é estático e usa FormSubmit, qualquer validação feita no navegador
+pode ser contornada por alguém que envie uma requisição diretamente ao serviço.
+Para validação absoluta seria necessário um backend próprio e, para confirmar
+a posse do telefone, um código por WhatsApp ou SMS.
