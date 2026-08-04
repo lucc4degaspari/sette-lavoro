@@ -1,0 +1,16 @@
+POLÍTICA DE PRIVACIDADE VALIDADA
+
+Todos os links de Política de Privacidade deste pacote agora apontam para:
+
+https://settelavoro.com.br/politica-de-privacidade
+
+Também foi mantida a página antiga politica-privacidade.html como redirecionamento,
+para evitar erro em links antigos ou páginas já indexadas.
+
+PUBLICAÇÃO:
+1. Extraia este ZIP.
+2. Substitua todos os arquivos no repositório.
+3. Faça Commit to main.
+4. Faça Push origin.
+5. Abra a landing com Ctrl + F5.
+6. Teste o link da política no formulário e no rodapé.
