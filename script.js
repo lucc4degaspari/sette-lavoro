@@ -146,10 +146,23 @@ if (contactType) {
 }
 
 if (leadForm) {
-  leadForm.addEventListener("submit", (event) => {
-    if (!contactType || contactType.value !== "empresa") {
-      event.preventDefault();
+  const submitButton = document.getElementById("submit-lead");
+  const formStatus = document.getElementById("form-status");
+  const originalButtonText = submitButton ? submitButton.textContent : "";
+  let isSubmitting = false;
 
+  function setFormStatus(message, type = "") {
+    if (!formStatus) return;
+
+    formStatus.textContent = message;
+    formStatus.classList.toggle("form-status-error", type === "error");
+    formStatus.classList.toggle("form-status-success", type === "success");
+  }
+
+  leadForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactType || contactType.value !== "empresa") {
       if (contactType) {
         contactType.setCustomValidity(
           contactType.value === "candidato"
@@ -165,9 +178,93 @@ if (leadForm) {
     contactType.setCustomValidity("");
 
     if (!validateBrazilianWhatsApp(true)) {
-      event.preventDefault();
       phone.focus();
       phone.reportValidity();
+      return;
+    }
+
+    if (!leadForm.checkValidity()) {
+      leadForm.reportValidity();
+      return;
+    }
+
+    if (isSubmitting) return;
+    isSubmitting = true;
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+    }
+
+    setFormStatus("Enviando sua solicitação...");
+
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 20000);
+
+    try {
+      const formData = new FormData(leadForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      // Informa ao FormSubmit a página exata de origem, sem parâmetros de depuração.
+      payload._url = `${window.location.origin}${window.location.pathname}`;
+
+      // O redirecionamento será feito pelo próprio site após a confirmação do envio.
+      const successUrl = payload._next;
+      delete payload._next;
+
+      const ajaxEndpoint = leadForm.action.replace(
+        "https://formsubmit.co/",
+        "https://formsubmit.co/ajax/"
+      );
+
+      const response = await fetch(ajaxEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+
+      let result = null;
+
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("O serviço de formulário retornou uma resposta inesperada.");
+      }
+
+      const submissionFailed =
+        !response.ok ||
+        result?.success === false ||
+        result?.success === "false";
+
+      if (submissionFailed) {
+        throw new Error(result?.message || "Não foi possível enviar a solicitação.");
+      }
+
+      setFormStatus("Solicitação recebida. Redirecionando...", "success");
+      window.location.assign(successUrl);
+    } catch (error) {
+      const timedOut = error?.name === "AbortError";
+
+      setFormStatus(
+        timedOut
+          ? "O envio demorou mais que o esperado. Tente novamente."
+          : "Não foi possível enviar agora. Confira sua conexão e tente novamente.",
+        "error"
+      );
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+
+      isSubmitting = false;
+      console.error("Erro ao enviar formulário:", error);
+    } finally {
+      window.clearTimeout(timeoutId);
     }
   });
 }

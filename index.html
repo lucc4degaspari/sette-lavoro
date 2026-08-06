@@ -230,6 +230,12 @@
           <input type="hidden" name="_cc" value="contato@settelavoro.com.br">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://lucc4degaspari.github.io/sette-lavoro/obrigado.html">
+          <div class="hp-field" aria-hidden="true">
+            <label>
+              Não preencha este campo
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
           <div class="business-gate">
             <label>
               Este contato é para:
@@ -313,7 +319,8 @@
             <span>Concordo com o uso dos dados para contato comercial, conforme a <a href="https://settelavoro.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</span>
           </label>
 
-          <button class="btn btn-full" type="submit">Quero receber uma proposta</button>
+          <button class="btn btn-full" id="submit-lead" type="submit">Quero receber uma proposta</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           <small>Seus dados serão usados apenas para atendimento da solicitação.</small>
           </div><!-- /campos-empresa -->
         </form>
@@ -367,6 +374,6 @@
 
   <a class="floating-cta" href="#formulario">Solicitar proposta</a>
 
-  <script src="script.js?v=20260804-3"></script>
+  <script src="script.js?v=20260806-4"></script>
 </body>
 </html>

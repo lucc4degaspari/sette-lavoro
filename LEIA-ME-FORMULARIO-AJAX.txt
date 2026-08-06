@@ -1,0 +1,24 @@
+FORMULÁRIO AJAX — SETTE LAVORO
+
+Esta versão:
+- mantém a validação do WhatsApp;
+- mantém o bloqueio de candidatos;
+- mantém o link oficial da Política de Privacidade;
+- envia os dados ao FormSubmit por AJAX;
+- só abre obrigado.html depois que o serviço confirma o recebimento;
+- mostra uma mensagem de erro se o envio falhar;
+- evita cliques duplicados enquanto o formulário está sendo enviado;
+- preserva o envio tradicional como fallback caso o JavaScript não carregue;
+- inclui um campo honeypot contra robôs.
+
+PUBLICAÇÃO
+1. Extraia o ZIP.
+2. Substitua todos os arquivos do repositório sette-lavoro.
+3. Faça o commit: Formulário AJAX e conversão confiável
+4. Faça Push origin.
+5. Aguarde o GitHub Pages atualizar.
+6. Abra a landing em uma janela anônima.
+7. Envie um formulário de teste.
+8. Confirme que o e-mail chegou e que a página terminou em /obrigado.html.
+
+O GTM e os códigos de rastreamento existentes foram preservados.

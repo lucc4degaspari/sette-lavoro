@@ -414,3 +414,33 @@ details p { color: var(--muted); margin-bottom: 0; }
 #campos-empresa[hidden] {
   display: none;
 }
+
+
+.hp-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+.form-status {
+  min-height: 20px;
+  margin: 2px 0 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-status-error {
+  color: #b42318;
+}
+
+.form-status-success {
+  color: #15803d;
+}
+
+.lead-form button:disabled {
+  cursor: wait;
+  opacity: .72;
+}
